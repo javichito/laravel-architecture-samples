@@ -7,8 +7,8 @@ use Illuminate\Container\Container;
 
 $app = new Container();
 
-$app->bind('NotifierInterface', 'EmailNotifier');
-$app->bind('BillerInterface', 'StripeBiller');
+$app->bindShared('NotifierInterface', 'EmailNotifier');
+$app->bindShared('BillerInterface', 'StripeBiller');
 
 $biller = $app->make('BillerInterface');
 
